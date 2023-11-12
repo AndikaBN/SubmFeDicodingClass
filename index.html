@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Aplikasi baca buku</title>
+  </head>
+  <body>
+    <header>
+      <br /><br />
+      <h1 align="center">Manajemen Buku</h1>
+      <hr />
+    </header>
+
+    <main>
+      <div id="app" align="center">
+        <div>
+          <label for="title">Judul</label>
+          <input type="text" id="title" placeholder="Enter Judul" />
+        </div>
+
+        <div>
+          <label for="author">Author</label>
+          <input type="text" id="author" placeholder="Enter author" />
+        </div>
+
+        <div>
+          <label for="year">Tahun Terbit:</label>
+          <input
+            type="number"
+            id="year"
+            name="year"
+            placeholder="Masukkan tahun terbit"
+          />
+        </div>
+
+        <div>
+          <label for="status">Status</label>
+          <select id="status">
+            <option value="unread">Belum dibaca</option>
+            <option value="read">Sudah dibaca</option>
+          </select>
+        </div>
+
+        <button onclick="addBook()">Tambahkan buku</button>
+      </div>
+
+      <h2 align="center">Buku</h2>
+
+      <div class="flex-box" align="center">
+        <div id="unreadBooks">
+          <h3>Belum dibaca</h3>
+          <hr />
+          <div id="unreadList" class="read-book"></div>
+        </div>
+
+        <div id="readBooks">
+          <h3>Sudah dibaca</h3>
+          <hr />
+          <div id="readList"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
