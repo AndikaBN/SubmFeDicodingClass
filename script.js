@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Hapus";
       deleteButton.onclick = function () {
-        removeBook(books, book, elementId);
+        showDeleteConfirmation(books, book, elementId);
       };
 
       buttonFlexDiv.appendChild(deleteButton);
@@ -108,5 +108,21 @@ document.addEventListener("DOMContentLoaded", function () {
       displayBooks("unreadList", unreadBooks);
       displayBooks("readList", readBooks);
     }
+  }
+  
+  function showDeleteConfirmation(books, book, elementId) {
+    const dialog = document.getElementById("dialog");
+    dialog.style.display = "block";
+
+    const confirmDeleteButton = document.getElementById("confirmDelete");
+    confirmDeleteButton.onclick = function () {
+      removeBook(books, book, elementId);
+      dialog.style.display = "none";
+    };
+
+    const cancelDeleteButton = document.getElementById("cancelDelete");
+    cancelDeleteButton.onclick = function () {
+      dialog.style.display = "none";
+    };
   }
 });
